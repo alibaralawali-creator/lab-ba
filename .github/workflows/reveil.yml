@@ -1,0 +1,13 @@
+# Réveil hebdomadaire du projet Supabase de Lab BA (l'offre gratuite se met en pause après 7 jours sans activité)
+name: Reveil Supabase
+on:
+  schedule:
+    - cron: "17 3 * * 1,4"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -fsS -X POST "https://qilwekcrkdrgqmttvjuw.supabase.co/rest/v1/rpc/ping" \
+            -H "apikey: sb_publishable_pqtVKtRRmdA6pF23UzU9Fg_OQ5mdIr-" -H "Content-Type: application/json" -d '{}'
