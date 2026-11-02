@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alibaralawali-creator.github.io/lab-ba/sitemap.xml
