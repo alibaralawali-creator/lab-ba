@@ -32,17 +32,23 @@
       });
     });
 
-    // Thème clair / sombre (par défaut : celui de l'ordinateur)
+    // Thème : automatique par défaut (comme l'ordinateur, en direct), puis clair, sombre, et retour à automatique
     var bouton = document.querySelector("[data-theme-bouton]");
-    if (bouton)
+    var titrer = function () {
+      var mode = document.documentElement.dataset.theme || "auto";
+      bouton.title = bouton.dataset["titre" + mode.charAt(0).toUpperCase() + mode.slice(1)];
+      bouton.setAttribute("aria-label", bouton.title);
+    };
+    if (bouton) {
+      titrer();
       bouton.addEventListener("click", function () {
-        var sombre = document.documentElement.dataset.theme
-          ? document.documentElement.dataset.theme === "dark"
-          : matchMedia("(prefers-color-scheme: dark)").matches;
-        var nouveau = sombre ? "light" : "dark";
-        document.documentElement.dataset.theme = nouveau;
-        stocker("labba-site-theme", nouveau);
+        var suivant = { auto: "light", light: "dark", dark: "auto" }[document.documentElement.dataset.theme || "auto"];
+        if (suivant === "auto") delete document.documentElement.dataset.theme;
+        else document.documentElement.dataset.theme = suivant;
+        stocker("labba-site-theme", suivant);
+        titrer();
       });
+    }
 
     // Serveur : Gitee si l'ordinateur est réglé sur la Chine (fuseau horaire ou langue), sinon GitHub
     var fuseau = "";
