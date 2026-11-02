@@ -1,37 +1,172 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-FR" data-langue="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lab BA</title>
+<title>Lab BA · Logiciel de béton armé gratuit</title>
+<meta name="description" content="Dimensionnez, vérifiez et simulez vos poutres en béton armé (GB 50010-2010). Note de calcul PDF, simulation jusqu'à la rupture, 12 langues, hors ligne. Gratuit pour Windows.">
+<link rel="canonical" href="https://alibaralawali-creator.github.io/lab-ba/">
+<link rel="alternate" hreflang="fr" href="https://alibaralawali-creator.github.io/lab-ba/">
+<link rel="alternate" hreflang="en" href="https://alibaralawali-creator.github.io/lab-ba/en/">
+<link rel="alternate" hreflang="zh" href="https://alibaralawali-creator.github.io/lab-ba/zh/">
+<link rel="alternate" hreflang="x-default" href="https://alibaralawali-creator.github.io/lab-ba/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lab BA · Logiciel de béton armé gratuit">
+<meta property="og:description" content="Dimensionnez, vérifiez et simulez vos poutres en béton armé (GB 50010-2010). Note de calcul PDF, simulation jusqu'à la rupture, 12 langues, hors ligne. Gratuit pour Windows.">
+<meta property="og:image" content="https://alibaralawali-creator.github.io/lab-ba/captures/apercu.jpg">
+<meta property="og:url" content="https://alibaralawali-creator.github.io/lab-ba/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1917">
 <link rel="icon" href="icone.png">
-<style>
-  :root { color-scheme: dark; }
-  body { margin: 0; font-family: system-ui, "Segoe UI", "Microsoft YaHei", sans-serif; background: #1a1917; color: #ece8e1; line-height: 1.6; }
-  main { max-width: 760px; margin: 0 auto; padding: 48px 20px; }
-  h1 { font-size: 2.6rem; margin: 0; } h1 span { color: #f08a3e; }
-  .sur { color: #f08a3e; letter-spacing: .2em; font-size: .75rem; text-transform: uppercase; font-weight: 700; }
-  a { color: #f5a35f; } .boutons a { display: inline-block; margin: 6px 8px 6px 0; padding: 10px 16px; border-radius: 10px; background: #f08a3e; color: #1a1917; font-weight: 700; text-decoration: none; }
-  .carte { border: 1px solid #3a3733; border-radius: 14px; padding: 18px 20px; margin-top: 24px; background: #22201d; }
-  footer { margin-top: 40px; color: #9b958c; font-size: .85rem; }
-</style>
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem("labba-site-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="assets/site.js" defer></script>
 </head>
 <body>
+<header class="entete">
+  <div class="largeur entete-ligne">
+    <a class="logo" href="index.html"><img src="icone.png" alt="" width="28" height="28"> Lab <span>BA</span></a>
+    <nav class="menu" aria-label="Menu">
+      <a href="#fonctions">Fonctions</a>
+      <a href="#captures">Captures</a>
+      <a href="#installation">Installation</a>
+      <a href="versions.html">Versions</a>
+      <a href="logiciels.html">Logiciels</a>
+    </nav>
+    <div class="outils">
+      <div class="langues"><a href="index.html" data-choix-langue="fr" aria-current="true">Français</a><a href="en/index.html" data-choix-langue="en">English</a><a href="zh/index.html" data-choix-langue="zh">中文</a></div>
+      <button class="bouton-icone" data-theme-bouton aria-label="Changer de thème" title="Changer de thème"><svg class="icone" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2"/><path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="m19 5-1.256 1.256"/><path d="M20 12h2"/></svg></button>
+    </div>
+  </div>
+</header>
 <main>
-  <p class="sur">Béton armé · GB 50010-2010</p>
-  <h1>Lab <span>BA</span></h1>
-  <p>Logiciel de calcul du béton armé : dimensionnement, vérification, simulation 3D et notes de calcul PDF. Fonctionne hors ligne sous Windows 10/11.<br>
-  钢筋混凝土计算软件：截面设计、验算、三维模拟与 PDF 计算书，Windows 10/11 离线使用。<br>
-  Reinforced concrete design software: sizing, checking, 3D simulation and PDF calculation notes. Works offline on Windows 10/11.</p>
-  <div class="boutons">
-    <a href="https://gitee.com/alibaralawali/lab-ba/releases">Télécharger (Chine · 中国)</a>
-    <a href="https://github.com/alibaralawali-creator/lab-ba/releases/latest">Télécharger (autres pays · other countries)</a>
+<section class="heros largeur">
+  <div class="heros-texte">
+    <p class="surtitre">Béton armé · GB 50010-2010 · gratuit</p>
+    <h1>Dimensionnez, vérifiez et simulez vos poutres en béton armé</h1>
+    <p class="chapo">Lab BA calcule les armatures et les étriers, vérifie la poutre sous charges pondérées, la charge jusqu'à la rupture stade par stade et produit une note de calcul PDF prête à rendre.</p>
+    <div class="telechargement" data-gitee="https://gitee.com/alibaralawali/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe" data-github="https://github.com/alibaralawali-creator/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe">
+  <a class="bouton-principal" href="https://github.com/alibaralawali-creator/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe" data-lien-principal><svg class="icone" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg> Télécharger 3.7.0 <small data-serveur-texte data-gitee-texte="depuis Gitee (Chine)" data-github-texte="depuis GitHub">depuis GitHub</small></a>
+  <p class="infos">Windows 10 / 11 · 92 Mo · version 3.7.0 du 3 novembre 2026</p>
+  <a class="autre-serveur" href="https://gitee.com/alibaralawali/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe" data-lien-autre data-gitee-texte="Hors de Chine ? Télécharger depuis GitHub" data-github-texte="En Chine ? Télécharger depuis Gitee">En Chine ? Télécharger depuis Gitee</a>
+</div>
   </div>
-  <div class="carte">
-    <a href="confidentialite.html">Confidentialité · 隐私政策 · Privacy</a> &nbsp;·&nbsp;
-    <a href="conditions.html">Conditions d'utilisation · 使用条款 · Terms</a>
+  <div class="heros-image"><svg class="poutre" viewBox="0 0 560 300" role="img" aria-label="Lab BA">
+  <g class="trait-fleches"><g><line x1="80" x2="80" y1="58" y2="102"/><path d="M75,96 L80,106 L85,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="130" x2="130" y1="58" y2="102"/><path d="M125,96 L130,106 L135,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="180" x2="180" y1="58" y2="102"/><path d="M175,96 L180,106 L185,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="230" x2="230" y1="58" y2="102"/><path d="M225,96 L230,106 L235,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="280" x2="280" y1="58" y2="102"/><path d="M275,96 L280,106 L285,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="330" x2="330" y1="58" y2="102"/><path d="M325,96 L330,106 L335,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="380" x2="380" y1="58" y2="102"/><path d="M375,96 L380,106 L385,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="430" x2="430" y1="58" y2="102"/><path d="M425,96 L430,106 L435,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g><g><line x1="480" x2="480" y1="58" y2="102"/><path d="M475,96 L480,106 L485,96 Z"/>
+      <animateTransform attributeName="transform" type="translate" values="0,-24; 0,0; 0,0; 0,-24" keyTimes="0;0.3;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.25;0.85;1" dur="6s" repeatCount="indefinite"/></g></g>
+  <path class="beton"><animate attributeName="d" values="M60,118 Q280,118 500,118 L500,150 Q280,150 60,150 Z;M60,118 Q280,118 500,118 L500,150 Q280,150 60,150 Z;M60,118 Q280,140 500,118 L500,150 Q280,172 60,150 Z;M60,118 Q280,140 500,118 L500,150 Q280,172 60,150 Z;M60,118 Q280,118 500,118 L500,150 Q280,150 60,150 Z" keyTimes="0;0.25;0.75;0.85;1" dur="6s" repeatCount="indefinite"/></path>
+  <path class="armature"><animate attributeName="d" values="M72,142 Q280,142 488,142;M72,142 Q280,142 488,142;M72,142 Q280,164 488,142;M72,142 Q280,164 488,142;M72,142 Q280,142 488,142" keyTimes="0;0.25;0.75;0.85;1" dur="6s" repeatCount="indefinite"/></path>
+  <g class="fissures"><line x1="235" x2="232" y1="168" y2="142">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.55;0.85;1" dur="6s" repeatCount="indefinite"/></line><line x1="262" x2="265" y1="168" y2="142">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.48;0.5800000000000001;0.85;1" dur="6s" repeatCount="indefinite"/></line><line x1="290" x2="287" y1="168" y2="136">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.51;0.6100000000000001;0.85;1" dur="6s" repeatCount="indefinite"/></line><line x1="318" x2="321" y1="168" y2="142">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.54;0.64;0.85;1" dur="6s" repeatCount="indefinite"/></line><line x1="345" x2="342" y1="168" y2="142">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5700000000000001;0.67;0.85;1" dur="6s" repeatCount="indefinite"/></line></g>
+  <path class="appui" d="M60,151 L47,172 L73,172 Z"/><line class="appui" x1="40" x2="80" y1="176" y2="176"/>
+  <circle class="appui" cx="500" cy="161" r="10"/><line class="appui" x1="480" x2="520" y1="176" y2="176"/>
+  <line class="axe" x1="60" x2="500" y1="214" y2="214"/>
+  <path class="moment" d="M60,214 Q280,318 500,214" pathLength="1"><animate attributeName="stroke-dashoffset" values="1;1;0;0;1" keyTimes="0;0.3;0.7;0.9;1" dur="6s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.7;0.9;1" dur="6s" repeatCount="indefinite"/></path>
+  <text class="etiquette" x="285" y="292">M</text>
+</svg></div>
+</section>
+
+<section class="chiffres largeur" aria-label="Lab BA">
+  <div><strong>12</strong><span>langues, dont le chinois et l'arabe</span></div>
+  <div><strong>100 %</strong><span>hors ligne après l'inscription</span></div>
+  <div><strong>PDF</strong><span>note de calcul prête à rendre</span></div>
+  <div><strong>0 €</strong><span>gratuit, mises à jour comprises</span></div>
+</section>
+
+<section id="fonctions" class="bloc largeur">
+  <h2>Tout le calcul d'une poutre, du chargement à la note PDF</h2>
+  <div class="grille-fonctions">
+    <article class="carte"><span class="pastille"><svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></span><h3>Dimensionnement</h3><p>Armatures longitudinales, étriers et dispositions constructives calculés à partir des charges, avec le détail de chaque étape.</p></article>
+    <article class="carte"><span class="pastille"><svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></svg></span><h3>Vérification</h3><p>La poutre tient-elle ? Combinaisons de charges, taux d'utilisation en flexion et à l'effort tranchant, verdict clair.</p></article>
+    <article class="carte"><span class="pastille"><svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></span><h3>Simulation jusqu'à la rupture</h3><p>Fissuration, plastification de l'acier, écrasement du béton : courbe moment–courbure et coupe animées, en 2D et en 3D.</p></article>
+    <article class="carte"><span class="pastille"><svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><h3>Note de calcul PDF</h3><p>Hypothèses, calculs détaillés, plan de ferraillage et métré, à votre nom et avec votre logo.</p></article>
+    <article class="carte"><span class="pastille"><svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg></span><h3>Projets et métré</h3><p>Enregistrez vos éléments par projet avec repère et quantité : acier et béton totalisés automatiquement.</p></article>
+    <article class="carte"><span class="pastille"><svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span><h3>Méthode du cours</h3><p>Organigramme vivant, notations et tableaux du cours : chaque résultat se relie à sa formule.</p></article>
   </div>
-  <footer>© 2026 Lawali ALI BARA</footer>
+</section>
+
+<section class="bloc largeur">
+  <h2>Éléments et normes</h2>
+  <p class="texte-section">Poutre rectangulaire et poutre en T selon GB 50010-2010 (Chine). Les autres éléments et normes arrivent dans les prochaines versions.</p>
+  <div class="normes">
+    <span class="norme dispo">GB 50010-2010 <small>disponible</small></span>
+    <span class="norme">Eurocode 2 <small>bientôt</small></span>
+    <span class="norme">ACI 318-19 <small>bientôt</small></span>
+    <span class="norme">BAEL 91 <small>bientôt</small></span>
+    <span class="norme">BS 8110 <small>bientôt</small></span>
+  </div>
+</section>
+
+<section id="captures" class="bloc largeur">
+  <h2>Captures d'écran</h2>
+  <div class="grille-captures">
+    <figure class="capture"><button data-agrandir="captures/fr-accueil.jpg" aria-label="Agrandir : Accueil : normes, projets, comparaison">
+      <img src="captures/fr-accueil.jpg" alt="Accueil : normes, projets, comparaison" width="1440" height="900" loading="lazy"></button>
+      <figcaption>Accueil : normes, projets, comparaison</figcaption></figure>
+    <figure class="capture"><button data-agrandir="captures/fr-dimensionnement.jpg" aria-label="Agrandir : Dimensionnement d'une poutre en T">
+      <img src="captures/fr-dimensionnement.jpg" alt="Dimensionnement d'une poutre en T" width="1440" height="900" loading="lazy"></button>
+      <figcaption>Dimensionnement d'une poutre en T</figcaption></figure>
+    <figure class="capture"><button data-agrandir="captures/fr-simulation.jpg" aria-label="Agrandir : Simulation jusqu'à la rupture">
+      <img src="captures/fr-simulation.jpg" alt="Simulation jusqu'à la rupture" width="1440" height="900" loading="lazy"></button>
+      <figcaption>Simulation jusqu'à la rupture</figcaption></figure>
+    <figure class="capture"><button data-agrandir="captures/fr-methode.jpg" aria-label="Agrandir : Organigramme du calcul">
+      <img src="captures/fr-methode.jpg" alt="Organigramme du calcul" width="1440" height="900" loading="lazy"></button>
+      <figcaption>Organigramme du calcul</figcaption></figure>
+  </div>
+</section>
+
+<section id="installation" class="bloc largeur">
+  <h2>Installation en 3 étapes</h2>
+  <ol class="etapes">
+    <li><span class="numero">1</span><div><h3>Télécharger</h3><p>Le bouton choisit le serveur le plus rapide pour vous : Gitee en Chine, GitHub ailleurs.</p></div></li>
+    <li><span class="numero">2</span><div><h3>Installer</h3><p>Windows peut afficher « Windows a protégé votre ordinateur » : le logiciel n'est pas encore signé. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».</p></div></li>
+    <li><span class="numero">3</span><div><h3>S'inscrire une fois</h3><p>Avec WeChat (QR code) ou un e-mail / Google. Ensuite, Lab BA fonctionne sans internet et se met à jour tout seul.</p></div></li>
+  </ol>
+  <div class="telechargement" data-gitee="https://gitee.com/alibaralawali/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe" data-github="https://github.com/alibaralawali-creator/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe">
+  <a class="bouton-principal" href="https://github.com/alibaralawali-creator/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe" data-lien-principal><svg class="icone" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg> Télécharger 3.7.0 <small data-serveur-texte data-gitee-texte="depuis Gitee (Chine)" data-github-texte="depuis GitHub">depuis GitHub</small></a>
+  <p class="infos">Windows 10 / 11 · 92 Mo · version 3.7.0 du 3 novembre 2026</p>
+  <a class="autre-serveur" href="https://gitee.com/alibaralawali/lab-ba/releases/download/v3.7.0/Lab-BA-Setup-3.7.0.exe" data-lien-autre data-gitee-texte="Hors de Chine ? Télécharger depuis GitHub" data-github-texte="En Chine ? Télécharger depuis Gitee">En Chine ? Télécharger depuis Gitee</a>
+</div>
+</section>
+
+<section class="bloc largeur">
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+    <details><summary>Lab BA est-il vraiment gratuit ?</summary><p>Oui, toutes les fonctions actuelles et les mises à jour sont gratuites.</p></details>
+    <details><summary>Faut-il internet ?</summary><p>Seulement pour l'inscription et les mises à jour. Les calculs et les PDF se font hors ligne, vos projets restent sur votre ordinateur.</p></details>
+    <details><summary>Mac ou Linux ?</summary><p>Pas pour l'instant : Lab BA fonctionne sous Windows 10 et 11 (64 bits).</p></details>
+    <details><summary>Les résultats suffisent-ils pour un projet réel ?</summary><p>Lab BA est un outil d'étude et de pré-dimensionnement : les résultats doivent être vérifiés par un ingénieur qualifié.</p></details>
+  </div>
+  <p class="texte-section avis">Une idée, un problème ? Dans Lab BA : ⚙ Paramètres > Donner mon avis.</p>
+</section>
 </main>
+<dialog class="visionneuse" aria-label="Captures d'écran"><button class="bouton-icone fermer" aria-label="Fermer"><svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button><img alt=""></dialog>
+<footer class="pied">
+  <div class="largeur pied-ligne">
+    <span>© 2026 Lab BA · conçu par Lawali ALI BARA</span>
+    <span><a href="confidentialite.html">Confidentialité</a> · <a href="conditions.html">Conditions d'utilisation</a> · <a href="versions.html">Versions</a></span>
+  </div>
+</footer>
 </body>
 </html>
