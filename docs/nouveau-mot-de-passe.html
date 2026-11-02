@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab BA · Nouveau mot de passe</title>
+<link rel="icon" href="icone.png">
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; font-family: system-ui, "Segoe UI", "Microsoft YaHei", sans-serif; background: #1a1917; color: #ece8e1; display: grid; place-items: center; min-height: 100vh; }
+  .carte { width: min(420px, calc(100vw - 32px)); border: 1px solid #3a3733; border-radius: 16px; padding: 28px; background: #22201d; }
+  h1 { margin: 0 0 6px; font-size: 1.5rem; } .sur { color: #f08a3e; letter-spacing: .2em; font-size: .72rem; font-weight: 700; }
+  label { display: block; margin-top: 14px; font-size: .8rem; color: #b8b1a7; }
+  input { width: 100%; box-sizing: border-box; margin-top: 4px; height: 40px; border-radius: 10px; border: 1px solid #3a3733; background: #1a1917; color: #ece8e1; padding: 0 12px; font-size: 1rem; }
+  button { margin-top: 18px; width: 100%; height: 42px; border: 0; border-radius: 10px; background: #f08a3e; color: #1a1917; font-weight: 700; font-size: 1rem; cursor: pointer; }
+  button:disabled { opacity: .5; } #message { margin-top: 14px; font-size: .9rem; } .ok { color: #6fcf8f; } .non { color: #ff8a80; }
+</style>
+</head>
+<body>
+<div class="carte">
+  <p class="sur">LAB BA</p>
+  <h1>Nouveau mot de passe · 新密码 · New password</h1>
+  <label>Nouveau mot de passe (8 caractères minimum) · 新密码（至少 8 位） · New password (8+ characters)
+    <input id="mdp" type="password" autocomplete="new-password">
+  </label>
+  <label>Confirmer · 确认 · Confirm
+    <input id="mdp2" type="password" autocomplete="new-password">
+  </label>
+  <button id="valider">Enregistrer · 保存 · Save</button>
+  <p id="message"></p>
+</div>
+<script>
+  // Le lien reçu par e-mail arrive avec un jeton temporaire dans l'adresse (#access_token=…&type=recovery)
+  const SUPABASE = "https://qilwekcrkdrgqmttvjuw.supabase.co";
+  const CLE_PUBLIQUE = "sb_publishable_pqtVKtRRmdA6pF23UzU9Fg_OQ5mdIr-";
+  const params = new URLSearchParams(location.hash.slice(1));
+  const jeton = params.get("access_token");
+  const message = document.getElementById("message");
+  const afficher = (texte, ok) => { message.textContent = texte; message.className = ok ? "ok" : "non"; };
+  if (!jeton) afficher("Lien invalide ou expiré : redemandez un e-mail depuis Lab BA. · 链接无效或已过期。 · Invalid or expired link.", false);
+  document.getElementById("valider").onclick = async () => {
+    const mdp = document.getElementById("mdp").value;
+    if (mdp.length < 8) return afficher("8 caractères minimum · 至少 8 位 · At least 8 characters", false);
+    if (mdp !== document.getElementById("mdp2").value) return afficher("Les deux mots de passe diffèrent · 两次输入不一致 · Passwords do not match", false);
+    const bouton = document.getElementById("valider");
+    bouton.disabled = true;
+    const r = await fetch(`${SUPABASE}/auth/v1/user`, {
+      method: "PUT",
+      headers: { apikey: CLE_PUBLIQUE, Authorization: `Bearer ${jeton}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ password: mdp }),
+    }).catch(() => null);
+    bouton.disabled = false;
+    if (r && r.ok) {
+      afficher("Mot de passe enregistré ✓ Retournez dans Lab BA et connectez-vous. · 密码已保存，请返回 Lab BA 登录。 · Password saved, sign in again in Lab BA.", true);
+      history.replaceState(null, "", location.pathname);
+    } else afficher("Échec : lien expiré ? Redemandez un e-mail depuis Lab BA. · 失败，请重新申请邮件。 · Failed: request a new e-mail from Lab BA.", false);
+  };
+</script>
+</body>
+</html>
