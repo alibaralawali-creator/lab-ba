@@ -55,6 +55,9 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 .langues a:hover { text-decoration: none; color: var(--texte); }
 .bouton-icone { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--bord); background: transparent; color: var(--texte-2); cursor: pointer; }
 .bouton-icone:hover { color: var(--texte); background: var(--fond-3); }
+/* Bouton de thème : une icône par mode (automatique = écran, clair = soleil, sombre = lune) */
+[data-icone] { display: none; }
+:root:not([data-theme]) [data-icone="auto"], :root[data-theme="light"] [data-icone="light"], :root[data-theme="dark"] [data-icone="dark"] { display: inline-flex; }
 
 /* Héros */
 .heros { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; padding-top: 64px; padding-bottom: 48px; }
