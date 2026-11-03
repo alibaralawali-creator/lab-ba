@@ -72,15 +72,32 @@
     var visionneuse = document.querySelector(".visionneuse");
     if (visionneuse && visionneuse.showModal) {
       var image = visionneuse.querySelector("img");
+      var film = visionneuse.querySelector("video");
       document.querySelectorAll("[data-agrandir]").forEach(function (b) {
         b.addEventListener("click", function () {
+          film.hidden = true;
+          image.hidden = false;
           image.src = b.dataset.agrandir;
           image.alt = b.querySelector("img").alt;
           visionneuse.showModal();
         });
       });
-      visionneuse.addEventListener("click", function () {
-        visionneuse.close();
+      // Vidéos : clic = grande taille, avec les commandes (pause, plein écran)
+      document.querySelectorAll("[data-agrandir-video]").forEach(function (v) {
+        v.addEventListener("click", function () {
+          image.hidden = true;
+          film.hidden = false;
+          film.src = v.dataset.agrandirVideo;
+          film.currentTime = v.currentTime;
+          film.play();
+          visionneuse.showModal();
+        });
+      });
+      visionneuse.addEventListener("click", function (e) {
+        if (e.target !== film) visionneuse.close();
+      });
+      visionneuse.addEventListener("close", function () {
+        film.pause();
       });
     }
   });
