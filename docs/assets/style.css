@@ -12,15 +12,19 @@
   --sur-primaire: #1a1917;
   --trait: #6b655c;
   --vert: #2f8a4c;
+  /* Logo (même dessin que dans le logiciel) : version claire ; version sombre ci-dessous */
+  --logo-fond: #fffaf3; --logo-grille: rgb(0 0 0 / 0.06); --logo-poutre: #f1ebe2; --logo-charge: #e5383b; --logo-texte: #e0712a;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    --logo-fond: #1c1b19; --logo-grille: rgb(255 255 255 / 0.06); --logo-poutre: #2e2c29; --logo-texte: #f5a23e;
     --fond: #1a1917; --fond-2: #22201d; --fond-3: #2a2824; --texte: #ece8e1; --texte-2: #b5afa5; --texte-3: #857f76;
     --bord: #3a3733; --primaire: #f08a3e; --primaire-texte: #f5a35f; --trait: #a39d93; --vert: #5cc47c; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
+  --logo-fond: #1c1b19; --logo-grille: rgb(255 255 255 / 0.06); --logo-poutre: #2e2c29; --logo-texte: #f5a23e;
   --fond: #1a1917; --fond-2: #22201d; --fond-3: #2a2824; --texte: #ece8e1; --texte-2: #b5afa5; --texte-3: #857f76;
   --bord: #3a3733; --primaire: #f08a3e; --primaire-texte: #f5a35f; --trait: #a39d93; --vert: #5cc47c; color-scheme: dark;
 }
@@ -44,6 +48,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 .entete-ligne { display: flex; align-items: center; gap: 20px; height: 60px; }
 .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 18px; color: var(--texte); }
 .logo span { color: var(--primaire); }
+.logo-dessin { flex: none; }
 .logo:hover { text-decoration: none; }
 .menu { display: flex; gap: 18px; margin-left: auto; font-size: 14px; }
 .menu a { color: var(--texte-2); }
@@ -105,7 +110,11 @@ h1 { font-size: clamp(30px, 4.4vw, 48px); margin: 12px 0 14px; }
 .norme.dispo small { color: var(--vert); }
 
 /* Captures */
-.grille-captures { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grille-captures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grille-videos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.video { margin: 0; }
+.video video { display: block; width: 100%; height: auto; border: 1px solid var(--bord); border-radius: 12px; background: var(--fond-3); }
+.video figcaption { margin-top: 8px; font-size: 14px; color: var(--texte-2); }
 .capture { margin: 0; }
 .capture button { display: block; width: 100%; padding: 0; border: 1px solid var(--bord); border-radius: 12px; overflow: hidden; cursor: zoom-in; background: var(--fond-3); }
 .capture img { transition: transform 0.3s; }
@@ -113,7 +122,9 @@ h1 { font-size: clamp(30px, 4.4vw, 48px); margin: 12px 0 14px; }
 .capture figcaption { margin-top: 8px; font-size: 14px; color: var(--texte-2); }
 .visionneuse { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; }
 .visionneuse::backdrop { background: rgb(0 0 0 / 0.82); }
-.visionneuse img { max-height: 90vh; border-radius: 10px; }
+.visionneuse img, .visionneuse video { max-height: 90vh; max-width: 96vw; border-radius: 10px; display: block; }
+.visionneuse [hidden] { display: none; }
+.video video { cursor: zoom-in; }
 .visionneuse .fermer { position: absolute; top: 8px; right: 8px; background: rgb(0 0 0 / 0.6); color: #fff; border-color: transparent; }
 
 /* Installation, FAQ */
@@ -155,7 +166,8 @@ h1 { font-size: clamp(30px, 4.4vw, 48px); margin: 12px 0 14px; }
 @media (max-width: 900px) {
   .heros { grid-template-columns: 1fr; padding-top: 36px; gap: 24px; }
   .heros-image { order: -1; max-width: 520px; }
-  .grille-fonctions, .etapes { grid-template-columns: 1fr 1fr; }
+  .grille-fonctions, .etapes, .grille-captures { grid-template-columns: 1fr 1fr; }
+  .grille-videos { grid-template-columns: 1fr; }
   .menu { display: none; }
   .outils { margin-left: auto; }
 }
